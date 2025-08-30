@@ -1,0 +1,118 @@
+:root {
+  --clr-gold-500: hsl(31, 77%, 52%);
+  --clr-cyan-800: hsl(184, 100%, 22%);
+  --clr-green-950: hsl(179, 100%, 13%);
+
+  --clr-white: hsla(0, 0%, 100%, 0.75);
+  --clr-gray-100: hsl(0, 0%, 95%);
+
+  --fs-body: 1.5rem;
+  --fw-regular: 400;
+  --fw-bold: 700;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100svh;
+  font-family: "Lexend Deca", sans-serif;
+  font-size: var(--fs-body);
+  font-weight: var(--fw-regular);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.columns-container {
+  margin-block: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: min(82rem, 100% - 4rem);
+  border-radius: 0.8rem;
+  overflow: hidden;
+}
+
+.column {
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 4rem;
+}
+
+.column__content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.sedan {
+  background-color: var(--clr-gold-500);
+}
+.suvs {
+  background-color: var(--clr-cyan-800);
+}
+.luxury {
+  background-color: var(--clr-green-950);
+}
+
+.column__title {
+  text-transform: uppercase;
+  font-family: "Big Shoulders", sans-serif;
+  font-size: 3.4rem;
+  color: var(--clr-gray-100);
+}
+
+.column__description {
+  color: var(--clr-white);
+}
+
+.column__btn {
+  font: inherit;
+  padding: 1.2rem 1.5rem;
+  max-width: 15rem;
+  border-radius: 4rem;
+  border: none;
+  outline: none;
+  background-color: var(--clr-gray-100);
+  cursor: pointer;
+}
+
+.sedan .column__btn {
+  color: var(--clr-gold-500);
+}
+
+.suvs .column__btn {
+  color: var(--clr-cyan-800);
+}
+
+.luxury .column__btn {
+  color: var(--clr-green-950);
+}
+
+@media (min-width: 620px) {
+  .columns-container {
+    flex-direction: row;
+  }
+
+  .column {
+    width: 33.33%;
+    gap: 8rem;
+  }
+
+  .column__btn:hover {
+    outline: 0.2rem solid var(--clr-white);
+    color: var(--clr-white);
+    background-color: transparent;
+  }
+}
